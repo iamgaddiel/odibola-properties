@@ -1,0 +1,50 @@
+.onboard-wrapper {
+  height: 100vh;
+  position: relative;
+}
+.onboarding-image {
+  width: 100%;
+  border-radius: 0 0 13em 0;
+  overflow: hidden;
+}
+.onboarding-image img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  transform: scale(1, 1);
+}
+
+.onboarding-heading-text {
+  font-style: normal;
+  font-weight: bolder;
+  font-size: 40px !important;
+  line-height: 50px;
+  font-family: "Avenir Next Bold";
+
+  /* Odibola Colors/primary/color(main) */
+}
+.onboarding-text-wrapper {
+  position: relative;
+  height: 43%;
+}
+
+.onboarding-text {
+  font-family: Avenir Next Bold;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 2rem;
+}
+.onboarding-actions {
+  display: flex;
+  width: 96%;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 40px;
+}
+.onboarding-action {
+  width: 50%;
+  border-radius: 15px;
+  overflow: hidden;
+  font-size: small;
+}

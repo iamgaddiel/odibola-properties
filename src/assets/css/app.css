@@ -1,0 +1,104 @@
+.nav-icon {
+  width: 25px;
+  height: 25px;
+}
+.nav-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 20px;
+  background-color: blue;
+  height: 20px;
+  overflow: hidden;
+}
+
+/* card */
+.card-image {
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  overflow: hidden;
+}
+.card-details {
+  text-align: left !important;
+}
+.card-image-sm {
+  /* display: flex; */
+  /* align-items: center; */
+  width: 104.76px;
+  height: 97px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.card-image-sm img {
+  width: 100%;
+  height: auto;
+  transform: scale(1, 1);
+}
+.card-image-lg {
+  display: flex;
+  align-items: center;
+  height: 25vh;
+  overflow: hidden;
+}
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+/* ----------------------------- */
+.detail-image-container {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.price-details {
+  background-color: #ffffff;
+  width: 80%;
+  border-radius: 10px;
+  margin: 0px auto;
+  z-index: 3;
+  position: relative;
+  top: -55px;
+}
+
+/* gallary preivew */
+.gallery-preview {
+  border-radius: 15px;
+  overflow: hidden;
+}
+.gallery-preview-sm {
+  border-radius: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.gallery-preview img,
+.gallery-preview-sm img {
+  width: 100%;
+  height: auto;
+}
+
+/* warning notice */
+.warning-notice-border {
+  border-left: 3px solid #ffbf29;
+}
+.primary-notice-border {
+  border-left: 3px solid #0f1f93;
+}
+
+/* land offer page */
+.offer-terms {
+  background: linear-gradient(to bottom, #f8f8f8 30%, #d8dcfb);
+  line-height: 2.4em;
+}
+
+.offer-text {
+  height: 30vh;
+  overflow-y: auto;
+}

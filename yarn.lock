@@ -1087,6 +1087,11 @@
   resolved "https://registry.yarnpkg.com/@capacitor/app/-/app-4.0.1.tgz#05c60541c427ef30f4762d8f786e70d0ed32fe01"
   integrity sha512-frPft9TMJL70jWq5jmxwGSBddZVvsWxX5Agj2i19WJerk37aTgljB05HRr/YLg6mF1G/NIXmmFJZDY8MEgirDg==
 
+"@capacitor/camera@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/camera/-/camera-4.1.1.tgz#a361b3595c378666614e3bd3384d158b85e4d7c3"
+  integrity sha512-L/1KLg4IRCAUmwhmu5jIic4U2OLAHFSW5GoExFU9yR8iCJo1SBGSiay2TpU3PpgmJHRtazO6pxKUCyAmDExkhw==
+
 "@capacitor/cli@4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@capacitor/cli/-/cli-4.2.0.tgz#626b8ea447a210d38d77eedf3d0dc629bf19beaa"
@@ -1126,6 +1131,21 @@
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@capacitor/keyboard/-/keyboard-4.0.1.tgz#36cd5f8aa2ef87a722f318e525d1bda12e7811d1"
   integrity sha512-JZVci2v9jAKH0sIoNNZzmw/cWGXWf+KneLt0yDr/6YSs/2/tfuH10yOrUOhgrKFkR+fFj/rddTClQXUQ8Rqcrg==
+
+"@capacitor/network@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/network/-/network-4.0.1.tgz#a4f6cfe3c09ea54d93e563d638a6aadda71f80d0"
+  integrity sha512-04xR3DtxxyibaQQGNLUGYxgLzlZtsucaUUikCFLijuxSKSM/tW8frDKpWdwx7yG/dOYLMYmAqaSFcelz5GRGpw==
+
+"@capacitor/preferences@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/preferences/-/preferences-4.0.1.tgz#fd56f24fe2cde1222cf5c3057d52cd55fd033e7b"
+  integrity sha512-FffJjKS4XcodUj/rtFtWizQ9q/oYDSn5opZ+JYwj/EkjiMWMhY/Pk9lN3vwQfp+VJrTt3hjr+bwKXjhTbYBqKw==
+
+"@capacitor/splash-screen@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@capacitor/splash-screen/-/splash-screen-4.0.1.tgz#5017a33bade5509e075f010c6381190e6ca6c5ba"
+  integrity sha512-7hklUx69aZDonuLP1R5X4ZTGgZLwX8RTj9/3U1905Kz/XflcT7Rhighbad+uZBaOU+L/8Vm6Y3RlR3rFj4ELVA==
 
 "@capacitor/status-bar@4.0.1":
   version "4.0.1"
@@ -3097,6 +3117,11 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
   integrity sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==
 
+bootstrap@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-5.2.1.tgz#45f97ff05cbe828bad807b014d8425f3aeb8ec3a"
+  integrity sha512-UQi3v2NpVPEi1n35dmRRzBJFlgvWHYwyem6yHhuT6afYF+sziEt46McRbT//kVXZ7b1YUYEVGdXEH74Nx3xzGA==
+
 bplist-parser@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/bplist-parser/-/bplist-parser-0.3.2.tgz#3ac79d67ec52c4c107893e0237eb787cbacbced7"
@@ -4922,6 +4947,11 @@ gzip-size@^6.0.0:
   integrity sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==
   dependencies:
     duplexer "^0.1.2"
+
+hamt_plus@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/hamt_plus/-/hamt_plus-1.0.2.tgz#e21c252968c7e33b20f6a1b094cd85787a265601"
+  integrity sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==
 
 handle-thing@^2.0.0:
   version "2.0.1"
@@ -7875,6 +7905,13 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+recoil@^0.7.5:
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.7.5.tgz#9a33a03350cfd99e08bdd5b73bfc8b8b9ee751b9"
+  integrity sha512-GVShsj5+M/2GULWBs5WBJGcsNis/d3YvDiaKjYh3mLKXftjtmk9kfaQ8jwjoIXySCwn8/RhgJ4Sshwgzj2UpFA==
+  dependencies:
+    hamt_plus "1.0.2"
 
 recursive-readdir@^2.2.2:
   version "2.2.2"

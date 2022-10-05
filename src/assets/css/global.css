@@ -1,0 +1,316 @@
+@font-face {
+    font-family: "Avenir Next Bold";
+    src: url("../fonts/AvenirNextLTPro-Bold.otf");
+}
+
+@font-face {
+    font-family: "Avenir Next";
+    src: url("../fonts/AvenirNextLTPro-Cn.otf");
+}
+
+/* .iti__flag {
+    background-image: url("../images/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .iti__flag {
+        background-image: url("../images/flags@2x.png");
+    }
+} */
+
+* {
+    --light-green: #f3f4ff;
+
+    /*darks  */
+    --dark-1: #525465;
+    --heading: #434553;
+
+    /* blues */
+    --blue-color: #0f1f93;
+    --button-color: #0d1b81;
+
+    /* grays */
+    --gray-color: #a4a7b6;
+    --light-gray: #c9cad3;
+    --lead: #808399;
+
+    /* whites */
+    --input-background: #e4e4e4;
+    --white: #ffffff;
+    --off-white: #E5E5E5;
+    --light-blue: #EFF1FF;
+    --warning: #FFF7E4;
+
+    /* notices */
+    --waning-bold: #FFBF29;
+    --primary-notice: #EBEDFF;
+
+    /* dashboard colors */
+    --light-blue-bg: #F3F4FF;
+    --light-orange-bg: #FFEFC9;
+    --light-green-bg: #EEFFEF;
+    --light-lemon-bg: #EAEEDA;
+    --dark-green: #25902D;
+    --dark-lemon: #95A64B;
+    --dark-orange: #DFA00F;
+
+
+    /* ionic theme */
+    --ion-background-color: #F8F8F8;
+    --ion-toolbar-background: #F8F8F8;
+
+}
+
+
+/* Colors */
+
+.blue-text {
+    color: var(--blue-color);
+}
+
+.gray-text {
+    color: var(--gray-color);
+}
+
+.heading-text {
+    color: var(--heading);
+}
+
+.lead-text {
+    color: var(--lead);
+}
+
+.light-text {
+    color: var(--white) !important;
+}
+
+.lemon-text {
+    color: var(--dark-lemon) !important;
+}
+
+.green-text {
+    color: var(--dark-green) !important;
+}
+
+.orange-text {
+    color: var(--dark-orange) !important;
+}
+
+
+
+/* background colors */
+.dark-bg {
+    background-color: var(--dark-1);
+}
+
+.blue-bg {
+    background-color: var(--blue-color) !important;
+}
+
+.gray-bg {
+    background-color: var(--gray-color) !important;
+}
+
+.input-bg {
+    background-color: var(--input-background);
+}
+
+.button-bg {
+    background: var(--button-color);
+}
+
+.light-gray-bg {
+    background-color: var(--light-gray);
+}
+
+.light-blue-bg {
+    background-color: var(--light-blue);
+}
+
+.light-bg {
+    background-color: var(--white) !important;
+}
+
+.off-white-bg {
+    background-color: var(--off-white) !important;
+}
+
+.warning-bg {
+    background-color: var(--warning) !important;
+}
+
+.primary-notice-bg {
+    background-color: var(--primary-notice) !important;
+}
+
+.success-notice-bg {
+    background-color: var(--light-green) !important;
+}
+
+.light-blue-bg {
+    background-color: var(--light-blue-bg) !important;
+}
+
+.light-green-bg {
+    background-color: var(--light-green-bg) !important;
+}
+
+.light-lemon-bg {
+    background-color: var(--light-lemon-bg) !important;
+}
+
+.light-orange-bg {
+    background-color: var(--light-orange-bg) !important;
+}
+
+
+/* Text */
+
+.bold {
+    font-family: "Avenir Next Bold";
+}
+
+
+/* buttons */
+
+.blue-btn {
+    background: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--white) !important;
+    padding: 15px auto !important;
+}
+
+.blue-btn-outline {
+    background: transparent;
+    border: 1px solid var(--button-color);
+    border-radius: 5px;
+    color: var(--blue-color) !important;
+    padding: 15px auto !important;
+}
+
+.gray-btn {
+    background: var(--light-gray);
+    border: none;
+    border-radius: 5px;
+    color: var(--white) !important;
+    padding: 15px auto !important;
+}
+
+
+/* flex */
+
+.flx-center-xy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flx-center-y {
+    display: flex;
+    align-items: center;
+}
+
+.flx-center-x {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* rounded borders */
+
+.rounded-edges {
+    border-radius: 25px !important;
+    overflow: hidden;
+}
+
+
+/* upload decoy */
+
+
+/* list */
+
+.list-style-non {
+    list-style-type: none !important;
+}
+
+/* typography */
+.txt-14 {
+    font-size: 14px !important;
+}
+
+.txt-16 {
+    font-size: 16px !important;
+}
+
+.txt-18 {
+    font-size: 16px !important;
+}
+
+.txt-20 {
+    font-size: 20px !important;
+}
+
+.txt-24 {
+    font-size: 24px !important;
+}
+
+/* Ion component styling */
+.ion-segment-button {
+    --background-activated: var(--blue-color);
+    --background-checked: red;
+    --background: purple;
+}
+
+/* set model and datetime with and height START */
+ion-modal:not([data-modal="search-model"]) {
+    --width: 290px;
+    --height: 382px;
+    --border-radius: 8px;
+}
+
+ion-modal ion-datetime {
+    height: 382px;
+}
+/* set model and datetime with and height END*/
+
+
+/* card images && slide */
+.card-image-wrapper {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px auto;
+}
+
+.card-image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* next, prev buttons for slides */
+.swiper-button-prev,
+.swiper-button-next {
+    top: 35%
+}
+
+/* otp verification */
+.verification-code:focus {
+    border-bottom: 1px solid var(--blue-color);
+}
+
+/* ===================== [ loading screen ] =========== */
+.loading-screen {
+    background-image: url('../images/splash-screen.jpg');
+    height: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    overflow: hidden;
+}
