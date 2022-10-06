@@ -1,0 +1,12 @@
+.db-img-wrp
+{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.db-img-wrp img
+{
+    width: 100%;
+    height: auto;
+}
