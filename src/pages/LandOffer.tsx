@@ -8,7 +8,7 @@ import '../assets/css/app.css'
 import { pencilOutline, checkmark } from 'ionicons/icons'
 import { useQuery } from 'react-query'
 import { getLandDetail } from '../utils/api_calls'
-import { useHistory, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import BackHeaderWithTitle from '../components/BackHeaderWithTitle'
 import useGetLandDetail from '../hooks/useGetLandDetail'
 import { useRecoilValue } from 'recoil'
@@ -19,10 +19,10 @@ import {warningOutline} from 'ionicons/icons'
 const LandOffer: React.FC = () => {
     type paramsType = { landId: string }
     const { landId } = useParams<paramsType>()
-    const { res } = useGetLandDetail(landId)
+    const { res } = useGetLandDetail(landId!)
     const land = res
 
-    const history = useHistory()
+    const navigate = useNavigate()
     const [showToast, setShowToast] = useState(false)
 
     // show input on clicking on the input
@@ -38,7 +38,7 @@ const LandOffer: React.FC = () => {
             setShowToast(true)
         }
         else {
-            history.push(`/land-accepted-offer/${landId}`)
+            navigate(`/land-accepted-offer/${landId}`)
         }
     }
 

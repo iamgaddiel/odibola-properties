@@ -2,7 +2,7 @@ import { IonButton, IonCard, IonCardContent, IonContent, IonIcon, IonInput, IonL
 import { alertCircleOutline, location, radioButtonOffOutline, star } from 'ionicons/icons'
 import React, { useState } from 'react'
 import { useQuery } from 'react-query'
-import { useHistory, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 
 // image
@@ -18,9 +18,9 @@ import { devDomain } from '../utils/selectors'
 const LandEnquiryForm = () => {
   type paramsType = { landId: string }
   const { landId } = useParams<paramsType>()
-  const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId))
+  const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId!))
   const domain = useRecoilValue(devDomain)
-  const history = useHistory()
+  const navigate = useNavigate()
 
   //* ===================== [fForm Data] ===================
   const [full_name, setFullName] = useState('')
@@ -38,7 +38,7 @@ const LandEnquiryForm = () => {
     }
     postEnquiry(formData)
     window.location.href = '/lands'
-    // history.push('/lands')
+    // navigate('/lands')
   }
 
   return (

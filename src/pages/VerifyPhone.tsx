@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useRecoilValue } from 'recoil'
 import { individualRegDetailSate, userAccountType } from '../utils/atoms'
 import { verifyOtpCode } from '../utils/api_calls'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 
 const VerifyPhone: React.FC = () => {
@@ -12,7 +12,7 @@ const VerifyPhone: React.FC = () => {
     let { phone } = useRecoilValue(individualRegDetailSate)
     let accountType = useRecoilValue(userAccountType)
     let [countDownTimer, setCountDownTimer] = useState(30);
-    let history = useHistory()
+    let navigate = useNavigate()
     // let [phone] = useState('+2347050595335') // todo:: remove before deployment
 
     //todo:: (send code again) does not work
@@ -43,10 +43,10 @@ const VerifyPhone: React.FC = () => {
 
         switch(accountType){
             case 'individual':
-                if (res) history.push('/individual-verification')
+                if (res) navigate('/individual-verification')
                 break;
             case 'organization':
-                if (res) history.push('/organization-verification')
+                if (res) navigate('/organization-verification')
         }
     }
 

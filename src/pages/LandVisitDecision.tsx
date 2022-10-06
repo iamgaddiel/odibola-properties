@@ -6,21 +6,21 @@ import Land1 from '../assets/images/land.png'
 import { alertCircleOutline, carOutline, radioButtonOff, radioButtonOffOutline } from 'ionicons/icons'
 import LandPreview from '../components/LandPreview'
 import BackHeaderWithTitle from '../components/BackHeaderWithTitle'
-import { useHistory, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router-dom'
 import useGetLandDetail from '../hooks/useGetLandDetail'
 
 
 const LandVisitDecision = () => {
   type paramsType = { landId: string }
   const { landId } = useParams<paramsType>()
-  const { domain, res } = useGetLandDetail(landId)
+  const { domain, res } = useGetLandDetail(landId!)
   const land = res
-  const history = useHistory()
+  const navigate = useNavigate()
   const [checked, setChecked] = useState(true)
 
   const continueVisit = () => {
-    if (checked) history.push(`/land-schedule-visit/${land?.id}`)
-    else if (checked === false) history.push(`/land-enquiry/${land?.id}`)
+    if (checked) navigate(`/land-schedule-visit/${land?.id}`)
+    else if (checked === false) navigate(`/land-enquiry/${land?.id}`)
   }
 
   const toggleCheckedOn = () => setChecked(true)

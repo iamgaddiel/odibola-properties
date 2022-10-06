@@ -2,9 +2,8 @@ import { IonPage, IonContent, IonImg, IonGrid, IonRow, IonCol, IonLabel, IonSele
 import { alertCircleOutline, warning } from 'ionicons/icons'
 import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
-import { useHistory, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useRecoilValue, useRecoilState } from 'recoil'
-import { useForm, SubmitHandler } from 'react-hook-form'
 
 
 // images
@@ -15,13 +14,13 @@ import { devDomain } from '../utils/selectors'
 
 
 const LandDetailVisit = () => {
-    const history = useHistory()
+    const navigate = useNavigate()
     const [displayToast, setDisplayToast] = useState(false) //* display toast
     const [propertyType, setPropertyType] = useRecoilState(propertyState)
 
     type paramsType = { landId: string }
     const { landId } = useParams<paramsType>()
-    const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId))
+    const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId!))
     const domain = useRecoilValue(devDomain)
 
     // this contains land details to be sent to the server
@@ -40,7 +39,7 @@ const LandDetailVisit = () => {
             ...purchaseLandDetail,
             size: plotSize,
             agreed_to_terms: agreed,
-            land:landId,
+            land:landId!,
             quantity,
             property_type: propertyType.propertyType,
             amount: cost,
@@ -50,7 +49,7 @@ const LandDetailVisit = () => {
         if (agreed === false || quantity <= 0 || plotSize === ""){
             setDisplayToast(true)
         } else {
-            history.push(`/schedule-land/${landId}`)
+            navigate(`/schedule-land/${landId}`)
             // history.push(`/land-offer/${landId}`)
         }
 
@@ -58,7 +57,7 @@ const LandDetailVisit = () => {
 
     useEffect(() => {
         setPropertyType({
-            id: landId,
+            id: landId!,
             propertyType: 'land',
             deposit: 0,
             totalCost: data.total_cost

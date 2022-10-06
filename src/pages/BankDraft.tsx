@@ -1,7 +1,7 @@
 import { Camera, CameraResultType } from '@capacitor/camera'
 import { IonButton, IonContent, IonImg, IonInput, IonPage } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import BackHeaderWithTitle from '../components/BackHeaderWithTitle'
 import { homePurchaseState, landPurchaseState, propertyState } from '../utils/atoms'
@@ -17,7 +17,7 @@ const BankDraft: React.FC = () => {
     const [landPurchaseDetail, landHomePurchaseDetail] = useRecoilState(landPurchaseState)
     const { id, propertyType } = useRecoilValue(propertyState)
     const [userId, setUserId] = useState('') // set user id
-    const history = useHistory()
+    const navigate = useNavigate()
 
 
     // take a picture of the proof of payment
@@ -44,7 +44,7 @@ const BankDraft: React.FC = () => {
                 break
         }
 
-        history.push('/contract-of-sale')
+        navigate('/contract-of-sale')
     }
 
     // Get user ID and set property purchase details

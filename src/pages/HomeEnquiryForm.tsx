@@ -2,7 +2,7 @@ import { IonPage, IonContent, IonLabel, IonIcon, IonInput, IonTextarea, IonButto
 import { star } from 'ionicons/icons'
 import React, { useState } from 'react'
 import { useQuery } from 'react-query'
-import { useParams, useHistory } from 'react-router'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useRecoilValue } from 'recoil'
 import BackHeaderWithTitle from '../components/BackHeaderWithTitle'
 import LandPreview from '../components/LandPreview'
@@ -13,9 +13,9 @@ import { devDomain } from '../utils/selectors'
 const HomeEnquiryForm = () => {
     type paramsType = { landId: string }
     const { landId } = useParams<paramsType>()
-    const { data } = useQuery(['home-detail', landId], () => getHomeDetail(landId))
+    const { data } = useQuery(['home-detail', landId], () => getHomeDetail(landId!))
     const domain = useRecoilValue(devDomain)
-    const history = useHistory()
+    const navigate = useNavigate()
 
     //* ===================== [fForm Data] ===================
     const [full_name, setFullName] = useState('')
@@ -33,7 +33,7 @@ const HomeEnquiryForm = () => {
         }
         postEnquiry(formData)
         window.location.href = '/lands'
-        // history.push('/lands')
+        // navigate('/lands')
     }
 
     return (

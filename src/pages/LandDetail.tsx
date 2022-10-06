@@ -2,7 +2,7 @@ import { IonPage, IonContent, IonImg, IonIcon, IonGrid, IonRow, IonCol, IonButto
 import { alertCircleOutline, warningOutline } from 'ionicons/icons'
 import React, { useEffect, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { useHistory, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import useAuthData from '../hooks/useAuthData'
 
@@ -12,7 +12,7 @@ import { landPurchaseState, propertyState } from '../utils/atoms'
 import { getUserData } from '../utils/plugins'
 
 const LandDetail = () => {
-    const history = useHistory()
+    const navigate = useNavigate()
     const [checked, setChecked] = useState()
     const [showToast, setShowToast] = useState(false)
     const user = useAuthData();
@@ -27,7 +27,7 @@ const LandDetail = () => {
     const { landId } = useParams<paramsType>()
 
     const [plotSize, setPlotSize] = useState<string>('');
-    const { domain, res } = useGetLandDetail(landId)
+    const { domain, res } = useGetLandDetail(landId!)
     const land = res
 
     // React-Hook-Form
@@ -54,10 +54,10 @@ const LandDetail = () => {
             deposit: 0.25 * (formData.quantity * land?.total_cost),
             totalCost: ((formData.quantity * land?.total_cost) + land?.legal_or_admin_cost),
             propertyType: 'land',
-            id: landId
+            id: landId!
         })
         // if (errors) setShowToast(true) //todo: show toast when form has errors
-        history.push(`/land-offer/${landId}`)
+        navigate(`/land-offer/${landId}`)
     }
 
 

@@ -30,7 +30,7 @@ import { Pagination } from 'swiper'
 import { useQuery } from 'react-query'
 import { getNHomes, getNLands } from '../utils/api_calls'
 import { devDomain } from '../utils/selectors'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import useAuthData from '../hooks/useAuthData'
 import { useEffect, useState } from 'react'
 import HomeSkeleton from '../components/skeletons/HomeSkeleton'
@@ -48,7 +48,7 @@ const Home = () => {
   const user = useAuthData()
 
   // hooks
-  const history = useHistory()
+  const navigate = useNavigate()
 
   // slides options
   const slideOpts = {
@@ -62,7 +62,7 @@ const Home = () => {
   const swiper = useSwiper();
 
   // go to user dashboard 
-  const goToDashboard = () => history.push('/dashboard')
+  const goToDashboard = () => navigate('/dashboard')
 
   useEffect(() => {
     setHomeList(homes?.data)

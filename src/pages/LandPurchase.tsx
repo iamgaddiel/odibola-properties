@@ -1,7 +1,7 @@
 import { IonPage, IonContent, IonImg, IonGrid, IonRow, IonCol, IonLabel, IonSelect, IonSelectOption, IonInput, IonButton, IonCheckbox, IonText, IonToast } from '@ionic/react'
 import React, { useEffect, useState } from 'react'
 import { useQuery } from 'react-query'
-import { useHistory, useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useRecoilValue, useRecoilState } from 'recoil'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
@@ -16,7 +16,7 @@ import { devDomain } from '../utils/selectors'
 
 
 const LandPurchase = () => {
-    const history = useHistory()
+    const navigate = useNavigate()
     const [plotSize, setPlotSize] = useState<string>('');
     const [confirmInputs, setInputs] = useState(false)
     const [show, setShow] = useState(false)
@@ -25,7 +25,7 @@ const LandPurchase = () => {
     type paramsType = { landId: string }
     const { landId } = useParams<paramsType>()
 
-    const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId))
+    const { data } = useQuery(['land-detail', landId], () => getLandDetail(landId!))
     const domain = useRecoilValue(devDomain)
     const [purchaseLandDetail, setPurchaseLandDetail] = useRecoilState(landPurchaseState)
 
@@ -39,12 +39,12 @@ const LandPurchase = () => {
     const handlePurchaseOffer: SubmitHandler<fieldInterface> = (data) => {
         // if (errors) setShow(true)
         setPurchaseLandDetail({ ...purchaseLandDetail, ...data })
-        history.push(`/land-offer/${landId}`)
+        navigate(`/land-offer/${landId}`)
     }
 
     useEffect(() => {
         setPropertyType({
-            id: landId,
+            id: landId!,
             propertyType: 'land',
             deposit: 0,
             totalCost: data?.total_cost

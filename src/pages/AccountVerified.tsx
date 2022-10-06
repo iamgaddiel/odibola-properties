@@ -6,7 +6,7 @@ import { saveUserData, setVerified } from '../utils/plugins'
 
 import SuccessImage from '../assets/svgs/verification-success.svg'
 import { useEffect, useRef, useState } from 'react'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 
 
 const AccountVerified = () => {
@@ -16,7 +16,7 @@ const AccountVerified = () => {
     const goToLogin = useRef<HTMLIonRouterLinkElement>(null)
     const [showAlert, setShowAlert] = useState(false)
     const [alertMessage, setToastMessage] = useState('')
-    const history = useHistory()
+    const navigate = useNavigate()
 
     useEffect(() => {
 
@@ -48,11 +48,11 @@ const AccountVerified = () => {
 
         setTimeout(() => {
             goToLogin.current!.click()
-            history.push('/login')
+            navigate('/login')
         }, 3000)
     }, []) 
 
-    const backToRegistrationForm = () => history.push('/registration')
+    const backToRegistrationForm = () => navigate('/registration')
 
     return (
         <IonPage>
